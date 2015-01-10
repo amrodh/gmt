@@ -158,6 +158,21 @@ class Category extends CI_Model {
    }
 
 
+    function insertSubCategory($params)
+   {  
+
+      $query = $this->db->insert_string('sub_category', $params);
+      $query = $this->db->query($query);
+
+      if($this->db->affected_rows() != 1){
+          return false;
+        }
+
+        return true;
+
+   }
+
+
     function getByID($id)
     {
 

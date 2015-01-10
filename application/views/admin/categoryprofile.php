@@ -32,6 +32,14 @@
                      <?php endforeach ?>
                       </table>
                     </div>
+                    <div class="panel-footer">
+                      <form action="" method="post">
+                        <input type="text" name="name" value="" placeholder="New Sub-Category" required>
+                        <input type="hidden" name="type" value="1">
+                        <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
+                        <input type="submit" name="submit" >
+                      </form>
+                    </div>
                   </div>
 
                   <div class="panel panel-default">
@@ -53,6 +61,14 @@
                           </tr>
                      <?php endforeach ?>
                       </table>
+                    </div>
+                    <div class="panel-footer">
+                      <form action="" method="post">
+                        <input type="text" name="name" value="" placeholder="New Sub-Category" required>
+                        <input type="hidden" name="type" value="2">
+                        <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
+                        <input type="submit" name="submit" >
+                      </form>
                     </div>
                   </div>
 

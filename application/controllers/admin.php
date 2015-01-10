@@ -191,6 +191,11 @@ class Admin extends CI_Controller {
 		$id = explode('categories/', $id);
 		$id = $id[1];
 
+		if(isset($_POST['submit'])){
+			unset($_POST['submit']);
+			$this->category->insertSubCategory($_POST);
+		}
+
 		$data['categoryID'] = $id;
 		$data['category'] = $this->category->getById($id);
 		$data['sub_categories'] = $this->category->getSubCategories($id);
