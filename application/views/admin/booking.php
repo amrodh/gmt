@@ -36,7 +36,7 @@
                       <tr>
                         <td>User</td>
                         <td>
-                          <a href="<?= base_url(); ?>admin/user/<?= $booking->user->username ?>">
+                          <a href="<?= base_url(); ?>admin/users/<?= $booking->user->username ?>">
                             <?= $booking->user->username; ?>
                           </a>
                         </td>
