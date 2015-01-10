@@ -103,6 +103,11 @@
                     
                       </table>
                     </div>
+                     <div class="panel-footer">
+                      <a href="<?= base_url(); ?>admin/newpackage/-1">
+                        <button type="button" class="btn btn-primary btn-lg active">Add New Package</button>
+                      </a>
+                    </div>
                   </div>
             <?php endif ?>
                          <!-- <div class="panel-footer" style="height:51px;">

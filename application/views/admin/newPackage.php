@@ -13,7 +13,13 @@
                         
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> <?= $category->name.' / '.$sub_category->name; ?>
+                                <i class="fa fa-dashboard"></i> 
+                                <?php if ($category->id == 3): ?>
+                                  <?= $category->name ?>
+                                <?php else: ?>
+                                  <?= $category->name.' / '.$sub_category->name; ?>
+                                <?php endif ?>
+                                
                             </li>
                         </ol>
                     </div>

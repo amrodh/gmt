@@ -249,13 +249,23 @@ class Admin extends CI_Controller {
 		$id = explode('newpackage/', $id);
 		$id = $id[1];
 
-		$data['sub_category'] = $this->category->getSub($id);
-		$data['category'] = $this->category->getById($data['sub_category']->category_id);
+		if($id == -1){
+			$data['category'] = $this->category->getById(3);
+		}else{
+			$data['sub_category'] = $this->category->getSub($id);
+			$data['category'] = $this->category->getById($data['sub_category']->category_id);
+		}
+		
 
 		
 		if(isset($_POST['submit'])){
 			unset($_POST['submit']);
-			$_POST['sub_category'] = $data['sub_category']->id;
+
+			if($id == -1)
+				$_POST['sub_category'] = -1;
+			else
+				$_POST['sub_category'] = $data['sub_category']->id;
+			
 			$insert = $this->category->insertPackage($_POST);
 			redirect('admin/package/'.$this->db->insert_id());
 		}
