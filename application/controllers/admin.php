@@ -408,7 +408,7 @@ class Admin extends CI_Controller {
 		if(isset($_POST['submit'])){
 			unset($_POST['submit']);
 			$this->booking->insert($_POST);
-			redirect('admin/bookings/'.$this->db->insert_id());
+			redirect('admin/booking/'.$this->db->insert_id());
 		}
 
 		$this->load->view('admin/newBooking',$data);
