@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2015 at 04:19 AM
+-- Generation Time: Jan 13, 2015 at 05:37 AM
 -- Server version: 5.5.35
 -- PHP Version: 5.4.23
 
@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`id`, `page`, `image`, `creation_date`) VALUES
-(4, 'Home_temp', 'php6Ux3mG_1420835547', '2015-01-09 20:14:44');
+(5, 'home', 'phpshWzN8_1421119366', '2015-01-13 03:22:46'),
+(6, 'holidays', 'phpFel1iD_1421120089', '2015-01-13 03:34:49');
 
 -- --------------------------------------------------------
 
@@ -81,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `path` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `name_2` (`name`),
@@ -91,10 +93,10 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `creation_date`) VALUES
-(1, 'Visit Egypt', '2015-01-07 19:49:13'),
-(2, 'International Travel', '2015-01-07 19:49:13'),
-(3, 'Hajj & Umra', '2015-01-07 19:49:20');
+INSERT INTO `category` (`id`, `name`, `creation_date`, `path`) VALUES
+(1, 'Visit Egypt', '2015-01-07 19:49:13', 'visit-egypt'),
+(2, 'International Travel', '2015-01-07 19:49:13', 'international'),
+(3, 'Hajj & Umra', '2015-01-07 19:49:20', 'hajj');
 
 -- --------------------------------------------------------
 
@@ -141,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `package` (
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sub_category` (`sub_category`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `package`
@@ -150,10 +152,12 @@ CREATE TABLE IF NOT EXISTS `package` (
 INSERT INTO `package` (`id`, `creation_date`, `sub_category`, `includes`, `excludes`, `highlights`, `days`, `nights`, `single`, `double`, `optional`, `terms`, `itinerary`, `title`) VALUES
 (1, '2015-01-08 00:24:23', 1, '', '', '', 0, 0, 0, 0, '', '', '', 'test'),
 (3, '2015-01-08 00:24:58', 1, 'test', 'test', 'test', 5, 5, 2, 2, 'test', 'test', 'test', 'test'),
-(4, '2015-01-09 15:20:01', 3, '<ul>\n	<li><strong>This is the exludes&nbsp;</strong></li>\n	<li><strong>1</strong></li>\n	<li><strong>2</strong></li>\n	<li><strong>3</strong></li>\n	<li><strong>3</strong></li>\n</ul>\n', '<hr />\n<p>Excludes<em>&nbsp;yes it is</em></p>\n\n<ol>\n	<li><em>1</em></li>\n	<li><em>2</em></li>\n	<li><em>3</em></li>\n	<li>&nbsp;</li>\n</ol>\n', '<p><s>Hightlightssss</s></p>\n', 5, 4, 500, 1000, '<blockquote>\n<p>sssssssssssssssssssssssssssssssssssssssssssssssskskjsks</p>\n\n<p>s</p>\n\n<p>s</p>\n\n<p>ss</p>\n</blockquote>\n', '<ul>\n	<li>22222</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ul>\n', '<ol>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ol>\n', 'Aswan Beuty'),
-(5, '2015-01-09 15:21:10', 3, '<ul>\n	<li><strong>This is the exludes&nbsp;</strong></li>\n	<li><strong>1</strong></li>\n	<li><strong>2</strong></li>\n	<li><strong>3</strong></li>\n	<li><strong>3</strong></li>\n</ul>\n', '<hr />\n<p>Excludes<em>&nbsp;yes it is</em></p>\n\n<ol>\n	<li><em>1</em></li>\n	<li><em>2</em></li>\n	<li><em>3</em></li>\n	<li>&nbsp;</li>\n</ol>\n', '<p><s>Hightlightssss</s></p>\n', 5, 4, 500, 1000, '<blockquote>\n<p>sssssssssssssssssssssssssssssssssssssssssssssssskskjsks</p>\n\n<p>s</p>\n\n<p>s</p>\n\n<p>ss</p>\n</blockquote>\n', '<ul>\n	<li>22222</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ul>\n', '<ol>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ol>\n', 'Aswan Beuty'),
+(5, '2015-01-09 15:21:10', 3, '<ul>\n	<li><strong>This is the exludes&nbsp;</strong></li>\n	<li><strong>1</strong></li>\n	<li><strong>2</strong></li>\n	<li><strong>3</strong></li>\n	<li><strong>3</strong></li>\n</ul>\n', '<hr />\n<p>Excludes<em>&nbsp;yes it is</em></p>\n\n<ol>\n	<li><em>1</em></li>\n	<li><em>2</em></li>\n	<li><em>3</em></li>\n	<li>&nbsp;</li>\n</ol>\n', '<p><s>Hightlightssss</s></p>\n', 5, 4, 500, 1000, '<blockquote>\n<p>sssssssssssssssssssssssssssssssssssssssssssssssskskjsks</p>\n\n<p>s</p>\n\n<p>s</p>\n\n<p>ss</p>\n</blockquote>\n', '<ul>\n	<li>22222</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ul>\n', '<ol>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n	<li>2</li>\n</ol>\n', 'Aswan Beauty'),
 (6, '2015-01-09 15:35:38', 4, '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', 7, 6, 500, 1000, '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', '<ul>\n	<li>1 night accommodation in London in a standard room on meal basis as below.</li>\n	<li>2 nights in Amsterdam, 1 night in Rhineland, 2 nights in Lucerne and 2 nights in Paris in standard rooms.</li>\n	<li>Daily buffet breakfasts and 3 dinners as mentioned in the programe.</li>\n	<li>Round trip economy class airline ticket on EgyptAir, daily departure.</li>\n	<li>Sightseeing tours as per the programe below.</li>\n	<li>Headsets throughtout the tour.</li>\n	<li>Round trip transportation between London and the Channel ports, for the Continent.</li>\n	<li>Cross-Channel ferry and Rhine cruise</li>\n	<li>Touring by private first class air conditioned motorcoach.</li>\n	<li>Services of a professional tour director while touring.</li>\n	<li>Local Guides for city sightseeing in Amsterdam and Paris.</li>\n	<li>Gratuities to tour director and driver.</li>\n</ul>\n', 'New York '),
-(7, '2015-01-10 03:03:45', -1, '<p>ex_test</p>\n', '<p>ex_test</p>\n', '<p>ex_test</p>\n', 22, 127, 222, 222, '<p>ex_test</p>\n', '<p>ex_test</p>\n', '<p>ex_test</p>\n', 'ex_test');
+(7, '2015-01-10 03:03:45', -1, '<p>ex_test</p>\n', '<p>ex_test</p>\n', '<p>ex_test</p>\n', 22, 127, 222, 222, '<p>ex_test</p>\n', '<p>ex_test</p>\n', '<p>ex_test</p>\n', 'ex_test'),
+(8, '2015-01-10 18:11:19', 7, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 5, 4, 5678, 567, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 'Miami Beaches'),
+(9, '2015-01-10 18:19:58', -1, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 5, 4, 456789, 45678, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 'Mekka and Madina'),
+(10, '2015-01-10 18:20:43', 8, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 5, 4, 34567, 45678, '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', '<ul>\n	<li>4 nights accommodation in Cairo based on bed and breakfast, in standard room in Semiramis Hotel or similar.</li>\n	<li>4 nights cruise based on sonesta nile cruise or similar</li>\n	<li>Private transfers to Cairo, Luxor &amp; Aswan upon arrival &amp; departure.</li>\n	<li>Half day visit to the Pyramids &amp; Sphinx.</li>\n	<li>Half day visit to the Egyptian Museum</li>\n	<li>English speaking guide</li>\n</ul>\n', 'Barcelona');
 
 -- --------------------------------------------------------
 
@@ -206,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `social_links` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   UNIQUE KEY `name_2` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -222,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `sub_category` (
   `type` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `sub_category`
@@ -233,7 +237,10 @@ INSERT INTO `sub_category` (`id`, `name`, `category_id`, `creation_date`, `type`
 (2, 'Exotic', 1, '2015-01-07 23:33:00', '2'),
 (3, 'Luxor', 1, '2015-01-07 23:39:58', '1'),
 (4, 'United States', 2, '2015-01-08 00:14:05', '1'),
-(5, 'Europe', 2, '2015-01-08 00:14:05', '1');
+(5, 'Europe', 2, '2015-01-08 00:14:05', '1'),
+(6, 'Paris', 2, '2015-01-10 18:09:49', '1'),
+(7, 'Exotic', 2, '2015-01-10 18:10:41', '2'),
+(8, 'Beach', 2, '2015-01-10 18:20:23', '2');
 
 -- --------------------------------------------------------
 
@@ -257,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `date_joined` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`,`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=111 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=107 ;
 
 --
 -- Dumping data for table `user`
@@ -378,8 +385,8 @@ INSERT INTO `user` (`id`, `username`, `email`, `first_name`, `last_name`, `locat
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `contact`
