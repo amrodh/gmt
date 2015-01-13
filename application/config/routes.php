@@ -2,7 +2,7 @@
 
 
 
-$route['default_controller'] = "admin";
+$route['default_controller'] = "home";
 
 
 $route['404_override'] = '';
@@ -10,6 +10,15 @@ $route['404_override'] = '';
 
 
 
+$route['flights'] = 'home/flights';
+$route['hotels'] = 'home/hotels';
+$route['cars'] = 'home/cars';
+$route['holidays'] = 'home/holidays';
+$route['contact'] = 'home/contact';
+$route['visit-egypt'] = 'home/sub/1';
+$route['international'] = 'home/sub/2';
+$route['hajj'] = 'home/sub/3';
+$route['package/(:any)'] = 'home/package';
 
 
 

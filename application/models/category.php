@@ -46,6 +46,22 @@ class Category extends CI_Model {
     }
 
 
+    function getCategoryBySub($id)
+    {
+      $q = $this
+              ->db
+              ->where('id',$id)
+              ->limit(1)
+              ->get('sub_category');
+
+           if($q->num_rows >0){
+              return $q->row();
+           } 
+
+           return false; 
+    }
+
+
     function getCategoryByName($name)
     {
 

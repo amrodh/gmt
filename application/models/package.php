@@ -69,7 +69,7 @@ class Package extends CI_Model {
 
       $q = $this
               ->db
-              ->where('name',$name)
+              ->where('title',$name)
               ->limit(1)
               ->get('package');
 

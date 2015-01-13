@@ -8,6 +8,20 @@
     src: url('../fonts/Ubuntu-M.ttf');
 }
 
+
+@font-face {
+    font-family: MyriadPro;
+    src: url('../fonts/MyriadPro-Semibold.ttf');
+}
+
+.package_td{
+    font-family: MyriadPro;
+    font-size:150%;
+    font-weight: bold;
+}
+
+
+
 .arabic {
     font-family: arabicFont;
     text-align: right;
