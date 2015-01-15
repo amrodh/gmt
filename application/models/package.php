@@ -30,6 +30,24 @@ class Package extends CI_Model {
 
     }
 
+    function getFeatured()
+    {
+
+      $q = $this
+              ->db
+              ->order_by('creation_date','desc')
+              ->get('feature');
+
+           if($q->num_rows >0){
+              return $q->result();
+           } 
+
+           return false; 
+
+    }
+
+    
+
     function get_3()
     {
 

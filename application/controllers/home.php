@@ -3,34 +3,126 @@
 class Home extends CI_Controller {
 
 	
+	public function init()
+	{
+		$data['all_categories'] = $this->category->get();
+		$data['all_sub'] = $this->category->getSubCategories(1);
+
+		return $data;			
+	}
+
+
 	public function index()
 	{	
-
+		$data = $this->init();
 		$data['banner'] = $this->banner->getByPage('home');
 
-		$this->load->view('home',$data);
+		$data['featured'] = $this->package->getFeatured();
+		foreach ($data['featured'] as $feature) {
+			$feature->package = $this->package->getByID($feature->package_id);
+			$feature->images = $this->category->getPackageImages($feature->package_id);
+		}
+
+		// printme($data);
+		// exit();
+
+		$this->load->view('home_travel',$data);
 	}
+
+
+
+
+	public function subcategory()
+	{
+		$data = $this->init();
+
+		$name = $this->uri->uri_string;
+		$name = explode('subcategory/', $name);
+		$name = urldecode($name[1]);
+
+		$newname = explode('/',$name);
+		$category_id = $newname[1];
+		$name = $newname[0];
+		$data['sub_category'] = $this->category->getSubByNameAndID($name,$category_id);
+		$data['packages'] = $this->category->getSubPackages($data['sub_category']->id);
+		if(is_array($data['packages'])){
+			foreach ($data['packages'] as $package) {
+				$package->images = $this->category->getPackageImages($package->id);
+			}
+		}
+
+		$this->load->view('subcategory_travel',$data);
+
+		// printme($data);
+		// exit();
+
+	}
+
+
+	public function category()
+	{
+		$data = $this->init();
+
+		$name = $this->uri->uri_string;
+		$name = explode('category/', $name);
+		$name = urldecode($name[1]);
+		$data['category'] = $this->category->getByName($name);
+		if($data['category']->id != 3){
+			$data['sub'] = $this->category->getSubCategories($data['category']->id);
+			if(is_array($data['sub'])){
+				foreach ($data['sub'] as $sub) {
+					$tmp = $this->category->getSubPackages($sub->id);
+					if(is_array($tmp)){
+						foreach ($tmp as $package) {
+							$package->images = $this->category->getPackageImages($package->id);
+							$data['packages'][] = $package;
+						}
+					}
+				}
+				
+			}
+		}else{
+			$data['packages'] = $this->category->getSubPackages(-1);
+			if(is_array($data['packages'])){
+				foreach ($data['packages'] as $package) {
+					$package->images = $this->category->getPackageImages($package->id);
+				}
+			}
+		}
+		$this->load->view('category_travel',$data);
+	}
+
+
+
 
 	public function flights()
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 		$this->load->view('flights',$data);
 	}
 
 	public function hotels()
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 		$this->load->view('hotels',$data);
 	}
 
 	public function cars()
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 		$this->load->view('cars',$data);
 	}
 
 	public function holidays()
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 
 		$this->load->view('holidays',$data);
@@ -38,12 +130,44 @@ class Home extends CI_Controller {
 
 	public function contact()
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 		$this->load->view('contact-us',$data);
 	}
 
+	public function aboutus()
+	{
+		$data = $this->init();
+
+		$data['banner'] = $this->banner->getByPage('holidays');
+
+		$this->load->view('about-us',$data);
+	}
+
+	public function golden()
+	{
+		$data = $this->init();
+
+		$data['banner'] = $this->banner->getByPage('holidays');
+
+		$this->load->view('golden',$data);
+	}
+
+
+	public function planyourvacation()
+	{
+		$data = $this->init();
+
+		$data['banner'] = $this->banner->getByPage('holidays');
+
+		$this->load->view('planyourvacation',$data);
+	}
+
 	public function sub($id)
 	{
+		$data = $this->init();
+
 		$data['banner'] = $this->banner->getByPage('holidays');
 
 		$this->load->model('category');
@@ -83,14 +207,18 @@ class Home extends CI_Controller {
 
 	public function package()
 	{
-		$data['banner'] = $this->banner->getByPage('holidays');
+		$data = $this->init();
+
 
 		$uri = $this->uri->uri_string;
 		$uri = explode('package/', $uri);
 		$name = urldecode($uri[1]);
 
+
+
 		$data['package'] = $this->package->getByName($name);
 		$data['categories'] = $this->category->get();
+
 
 		if($data['package']->sub_category == -1){
 			$data['category'] = $this->category->getByID(3);
@@ -103,49 +231,49 @@ class Home extends CI_Controller {
 
 		$data['package']->images = $this->category->getPackageImages($data['package']->id);
 		
-		$this->load->view('package',$data);
+		$this->load->view('package_travel',$data);
 	}
 
 
 
 
-	public function init()
-	{	
-		$data = array();
+	// public function init()
+	// {	
+	// 	$data = array();
 		
-		if(isset($this->session->userdata['id'])){
-			$this->load->model('user');
-			$data['loggedIn'] = true;
-			$data['user'] = $this->user->getUserByUsername($this->session->userdata['username']);
-			if ($data['user']->is_valid == 1)
-			{
-				$data['is_valid'] = $data['user']->is_valid;
-			}
-			// $this->load->model('service');
-			if ($this->user->is_subscribed($data['user']->id))
-			{
-				$data['is_subscribed'] = true;
-			}
-			else{
-				$data['is_subscribed'] = false;
-			}
-		}
+	// 	if(isset($this->session->userdata['id'])){
+	// 		$this->load->model('user');
+	// 		$data['loggedIn'] = true;
+	// 		$data['user'] = $this->user->getUserByUsername($this->session->userdata['username']);
+	// 		if ($data['user']->is_valid == 1)
+	// 		{
+	// 			$data['is_valid'] = $data['user']->is_valid;
+	// 		}
+	// 		// $this->load->model('service');
+	// 		if ($this->user->is_subscribed($data['user']->id))
+	// 		{
+	// 			$data['is_subscribed'] = true;
+	// 		}
+	// 		else{
+	// 			$data['is_subscribed'] = false;
+	// 		}
+	// 	}
 
 
-		$tmp = $this->session->flashdata('loginError');
+	// 	$tmp = $this->session->flashdata('loginError');
 
-		if($tmp){
-			$data['loginError'] = $this->session->flashdata('loginError');
-			$data['login_username'] = $this->session->flashdata('login_username');
-			$data['loginErrorType'] = $this->session->flashdata('loginErrorType');
-		}
+	// 	if($tmp){
+	// 		$data['loginError'] = $this->session->flashdata('loginError');
+	// 		$data['login_username'] = $this->session->flashdata('login_username');
+	// 		$data['loginErrorType'] = $this->session->flashdata('loginErrorType');
+	// 	}
 
 		
-		$uri = $this->uri->uri_string;
+	// 	$uri = $this->uri->uri_string;
 		
-		return $data;
+	// 	return $data;
 		
-	}
+	// }
 
 	
 

@@ -207,6 +207,25 @@ class Category extends CI_Model {
     }
 
 
+
+    function getByName($name)
+    {
+
+      $q = $this
+              ->db
+              ->where('name',$name)
+              ->limit(1)
+              ->get('category');
+
+           if($q->num_rows >0){
+              return $q->row();
+           } 
+
+           return false; 
+
+    }
+
+
     function getPackageByID($id)
     {
 
@@ -271,6 +290,39 @@ class Category extends CI_Model {
 
            return false;
     }
+
+    function getSubByName($name)
+    {
+      $q = $this
+              ->db
+              ->where('name',$name)
+              ->limit(1)
+              ->get('sub_category');
+
+           if($q->num_rows >0){
+              return $q->row();
+           } 
+
+           return false;
+    }
+
+     function getSubByNameAndID($name,$id)
+    {
+      $q = $this
+              ->db
+              ->where('name',$name)
+              ->where('category_id',$id)
+              ->limit(1)
+              ->get('sub_category');
+
+           if($q->num_rows >0){
+              return $q->row();
+           } 
+
+           return false;
+    }
+
+    
 
     function getSubPackages($id)
     {
