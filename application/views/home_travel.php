@@ -112,46 +112,12 @@
 																						<td height="7"></td>
 																					</tr>
 																					<tr>
-																						<td height="295" valign="top" visible="false" style="z-index:10;">
-																							<!-- <object codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0"
-																								classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"  width="492" height="302" VIEWASTEXT>
-																								<param name="_cx" value="13017" />
-																								<param name="_cy" value="7990" />
-																								<param name="FlashVars" value="13017" />
-																								<param name="Movie" value="SpecialOffersBox.swf" />
-																								<param name="Src" value="SpecialOffersBox.swf" />
-																								<param name="WMode" value="Transparent" />
-																								<param name="Play" value="-1" />
-																								<param name="Loop" value="-1" />
-																								<param name="Quality" value="High" />
-																								<param name="SAlign" value="" />
-																								<param name="Menu" value="-1" />
-																								<param name="Base" value="" />
-																								<param name="AllowScriptAccess" value="always" />
-																								<param name="Scale" value="ShowAll" />
-																								<param name="DeviceFont" value="0" />
-																								<param name="EmbedMovie" value="0" />
-																								<param name="BGColor" value="" />
-																								<param name="SWRemote" value="" />																								
-																								<embed SRC="SpecialOffersBox.swf" WIDTH="492" HEIGHT="302" PLAY="true" LOOP="true" WMODE="transparent"
-																									QUALITY="high" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
-																								</embed>
-																							</object> -->
-                                                                                           <!--  <ul class="bxslider" style="height: 455px!important;width:200px">
-                                                                                            <li style="width:50%;">
-                                                                                                <?php foreach ($featured as $package): ?>
-                                                                                                    <?php 
-                                                                                                    $image = $package->images;
-                                                                                                    $image = $image[0];
-                                                                                                    $image = $image->image;
-                                                                                                         ?>
-                                                                                                    <img class="slider_imgs" src="<?= base_url(); ?>application/static/upload/package/<?= $image ?>">
-                                                                                                <?php endforeach ?>
-                                                                                              
-                                                                                            </li>
-                                                                                                </ul> -->
-                                                                                                
-																							</td>
+																						<td height="302" valign="top" visible="false" style="z-index:10;">
+
+                                                                                            <?php include('slider.php'); ?>
+        
+                                                                                        </td>
+
 																					</tr>
 																					<tr>
 																						<td align="center"><img alt="" src="<?= base_url(); ?>application/static/images/InternationalHolidays.png" width="492" height="30" /></td>

@@ -23,8 +23,8 @@ class Home extends CI_Controller {
 			$feature->images = $this->category->getPackageImages($feature->package_id);
 		}
 
-		// printme($data);
-		// exit();
+		 // printme($data);
+		 // exit();
 
 		$this->load->view('home_travel',$data);
 	}
