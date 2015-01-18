@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
 		$data['all_categories'] = $this->category->get();
 		$data['all_sub'] = $this->category->getSubCategories(1);
-
+		$data['banner'] = $this->banner->getByPage('home');
 		return $data;			
 	}
 
@@ -16,7 +16,6 @@ class Home extends CI_Controller {
 	{	
 		$data = $this->init();
 		$data['banner'] = $this->banner->getByPage('home');
-
 		$data['featured'] = $this->package->getFeatured();
 		foreach ($data['featured'] as $feature) {
 			$feature->package = $this->package->getByID($feature->package_id);
@@ -147,11 +146,11 @@ class Home extends CI_Controller {
 
 	public function golden()
 	{
-		$data = $this->init();
+		//$data = $this->init();
 
-		$data['banner'] = $this->banner->getByPage('holidays');
+		//$data['banner'] = $this->banner->getByPage('holidays');
 
-		$this->load->view('golden',$data);
+		$this->load->view('golden');
 	}
 
 

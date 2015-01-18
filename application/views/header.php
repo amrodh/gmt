@@ -5100,18 +5100,21 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     </tr>
     <tr>
         <td width="100%" align="center">
-            <img id="Header1_Banner" class="img" usemap="#banner_Map" src="<?= base_url(); ?>application/static/images/banner.jpg" style="height:95px;width:964px;" />
-            <map id="Map2" name="banner_Map">
+            <a href="">
+                <img id="Header1_Banner" class="img" usemap="" src="<?= base_url(); ?>application/static/upload/banner/<?= $banner->image; ?>" style="height:95px;width:964px;" />
+            </a>
+
+            <!-- <map id="Map2" name="banner_Map">
                 <area shape="circle" alt="Travel Choice" coords="52,43,42" href="http://www.travelchoiceegypt.com" />
-            </map>
-            <map id="Header1_Map" name="Map">
+            </map> -->
+            <!-- <map id="Header1_Map" name="Map">
                 <area shape="rect" coords="580,0,635,15" href="http://www.travelchoiceegypt.com/ContactUsForm.aspx"
                     alt="Contact us" />
                 <area shape="rect" coords="655,1,795,15" href="http://www.travelchoiceegypt.com/Registration.aspx"
                     alt="Subscribe To Our Magazine" />
                 <area shape="rect" coords="808,1,957,15" href="http://www.travelchoiceegypt.com/cook_news_link.aspx"
                     alt="Download Cook's Magazine" />
-            </map>
+            </map> -->
         </td>
     </tr>
     <tr>
