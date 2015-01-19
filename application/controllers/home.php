@@ -7,7 +7,26 @@ class Home extends CI_Controller {
 	{
 		$data['all_categories'] = $this->category->get();
 		$data['all_sub'] = $this->category->getSubCategories(1);
+		$data['total_sub'] = $this->category->getAllSub();
 		$data['banner'] = $this->banner->getByPage('home');
+
+		$egypt_sub = array();
+		$internaitonal_sub = array();
+
+		foreach ($data['total_sub'] as $sub ) {
+			$category_id = $sub->category_id;
+			if($category_id == 1)
+				$egypt_sub[] = $sub->name;
+			else
+				$internaitonal_sub[]= $sub->name;
+		}
+
+		$data['all_categories'][0]->subs = $egypt_sub;
+		$data['all_categories'][1]->subs = $internaitonal_sub;
+		
+		//printme($data);
+		//exit();
+
 		return $data;			
 	}
 
