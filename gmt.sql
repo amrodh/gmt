@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2015 at 05:50 AM
+-- Generation Time: Jan 21, 2015 at 03:43 AM
 -- Server version: 5.5.35
 -- PHP Version: 5.4.23
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `banner`
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
 
 INSERT INTO `banner` (`id`, `page`, `image`, `creation_date`) VALUES
 (5, 'home', 'phpshWzN8_1421119366', '2015-01-13 03:22:46'),
-(6, 'holidays', 'phpFel1iD_1421120089', '2015-01-13 03:34:49');
+(7, 'booking', 'phpYDfs70_1421810091', '2015-01-21 03:14:51');
 
 -- --------------------------------------------------------
 
@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `date` date NOT NULL,
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `package_id` (`package_id`),
   KEY `user_id` (`user_id`)
@@ -69,8 +70,8 @@ CREATE TABLE IF NOT EXISTS `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `package_id`, `adult`, `children`, `single`, `double`, `triple`, `date`, `creation_date`, `user_id`) VALUES
-(1, 6, 11, 22, 500, 2200, 3000, '2015-01-31', '2015-01-10 02:14:17', 106);
+INSERT INTO `booking` (`id`, `package_id`, `adult`, `children`, `single`, `double`, `triple`, `date`, `creation_date`, `user_id`, `status`) VALUES
+(1, 6, 11, 22, 500, 2200, 3000, '2015-01-31', '2015-01-10 02:14:17', 106, 'Awaiting Cost');
 
 -- --------------------------------------------------------
 
@@ -135,14 +136,20 @@ CREATE TABLE IF NOT EXISTS `feature` (
   KEY `id` (`id`),
   KEY `package_id` (`package_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `feature`
 --
 
 INSERT INTO `feature` (`id`, `package_id`, `category_id`, `creation_date`) VALUES
-(3, 13, 2, '2015-01-15 05:26:00');
+(4, 5, 1, '2015-01-18 04:12:49'),
+(6, 13, 2, '2015-01-21 03:34:22'),
+(7, 12, 1, '2015-01-21 03:34:40'),
+(8, 11, 1, '2015-01-21 03:34:43'),
+(9, 10, 2, '2015-01-21 03:34:46'),
+(10, 8, 2, '2015-01-21 03:35:25'),
+(11, 6, 2, '2015-01-21 03:35:33');
 
 -- --------------------------------------------------------
 
@@ -197,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `package_image` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `image` (`image`),
   KEY `package_id` (`package_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `package_image`
@@ -227,7 +234,12 @@ INSERT INTO `package_image` (`id`, `package_id`, `image`, `creation_date`) VALUE
 (42, 12, 'phpBAkwTy_42', '2015-01-15 03:15:42'),
 (43, 13, 'phpYLW7Y9_43', '2015-01-15 04:05:28'),
 (44, 13, 'phpFu7Jga_44', '2015-01-15 04:05:28'),
-(45, 13, 'phpE4Hnya_45', '2015-01-15 04:05:28');
+(45, 13, 'phpE4Hnya_45', '2015-01-15 04:05:28'),
+(46, 8, 'phpxPYlxd_46', '2015-01-21 03:35:05'),
+(47, 8, 'phpNRH9JU_47', '2015-01-21 03:35:06'),
+(48, 8, 'phpn231WB_48', '2015-01-21 03:35:06'),
+(49, 10, 'phpSWG8MU_49', '2015-01-21 03:36:09'),
+(50, 10, 'phpLXwDfj_50', '2015-01-21 03:36:09');
 
 -- --------------------------------------------------------
 
