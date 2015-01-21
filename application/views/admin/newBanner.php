@@ -39,7 +39,12 @@
                     <tbody>
                       <tr>
                         <td>Page Name:</td>
-                        <td><input type="text" name="page" required pattern=".{3,}" value="<?php if(isset($params)) echo $params['page']; ?>">
+                        <td>
+                        <select name="page">
+                           <?php foreach ($rest as $page): ?>
+                           	<option value="<?= $page ?>"><?= $page ?></option>
+                           <?php endforeach ?>
+                        </select>				
                         </td>
                       </tr>
                       <tr>

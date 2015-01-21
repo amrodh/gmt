@@ -33,7 +33,16 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"><?= $package->title; ?></h3>
+              <h3 class="panel-title"><?= $package->title; ?> 
+              <a style="float:right;" target="_blank" href="<?= base_url(); ?>package/<?= $package->title; ?>" title="">Show On Website</a>
+              <form action="" method="post" style="margin-top:2%;" >
+              	<?php if ($feature): ?>
+              	<input type="submit" class="btn btn-primary active" name="remove" value="Remove feature">
+              	<?php else: ?>
+              	<input type="submit" class="btn btn-primary active" name="add" value="Add feature">
+              	<?php endif ?>
+              </form>
+                            </h3>
             </div>
             <div class="panel-body">
               <div class="row">

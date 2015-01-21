@@ -112,6 +112,13 @@ class Admin extends CI_Controller {
 		$data = $this->init();
 		$this->load->model('banner');
 
+		$data['pages'] = array("home", "holidays", "about-us","booking","plan-your-vacation","contact-us");
+		$data['rest'] = array();
+		$banners = $this->banner->get();
+			foreach ($data['pages'] as $page) {
+				if(!$this->banner->getByPage($page))
+					$data['rest'][] = $page;
+			}
 		if(isset($_POST['submit'])){
 			$target_dir = $this->config->config['upload_path'].'/banner/';
 			$image = basename($_FILES['image']['tmp_name']).'_'.time();
@@ -411,6 +418,32 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/booking',$data);
 	}
 
+	public function changebooking()
+	{
+		$data = $this->init();
+		$this->load->model('booking');
+
+		$id = $this->uri->uri_string;
+		$id = explode('changebooking/', $id);
+		$id = $id[1];
+
+		$data['booking'] = $this->booking->getById($id);
+
+		if(isset($_POST['cancel'])){
+			redirect('admin/booking/'.$data['booking']->id);
+		}
+
+		if(isset($_POST['confirm'])){
+			unset($_POST['confirm']);
+			$this->booking->update($data['booking']->id,$_POST);
+			redirect('admin/booking/'.$data['booking']->id);
+		}
+
+		$this->load->view('admin/changebooking',$data);
+		//printme($data['booking']);
+		//exit();
+	}
+
 
 	public function addBooking()
 	{
@@ -437,7 +470,31 @@ class Admin extends CI_Controller {
 		$id = explode('package/', $id);
 		$id = $id[1];
 
+		$data['feature'] = false;
+
 		$data['package'] = $this->category->getPackageByID($id);
+		if($data['package']->sub_category != -1)
+		$category = $this->category->getCategoryBySub($data['package']->sub_category)->category_id;
+
+		if(isset($_POST['remove'])){
+			$this->package->delete_feature($id);
+
+		}
+
+		if(isset($_POST['add'])){
+			$params = array();
+			$params['package_id'] = $id;
+			$params['category_id'] = $category;
+			$this->package->insert_feature($params);
+		}
+
+		$featured = $this->package->getFeatured();
+		foreach ($featured as $package) {
+			if($package->package_id == $id)
+				$data['feature'] = true;
+		}
+
+
 		$data['package_images'] = $this->category->getPackageImages($id);
 		
 		if($data['package']->sub_category == -1){

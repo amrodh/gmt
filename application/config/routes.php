@@ -23,6 +23,7 @@ $route['golden'] = 'home/golden';
 // $route['hajj'] = 'home/sub/3';
 // 
 $route['package/(:any)'] = 'home/package';
+$route['booking/(:any)'] = 'home/booking';
 $route['subcategory/(:any)'] = 'home/subcategory';
 $route['category/(:any)'] = 'home/category';
 
@@ -44,6 +45,7 @@ $route['admin/package/new'] = 'admin/newPackage';
 $route['admin/content/new'] = 'admin/addContent';
 $route['admin/banner/new'] = 'admin/newBanner';
 $route['admin/categories/(:any)'] = 'admin/category';
+$route['admin/changebooking/(:any)'] = 'admin/changebooking';
 $route['admin/sub/(:any)'] = 'admin/sub';
 
 $route['admin/deletecontent/(:any)'] = 'admin/deleteContent';

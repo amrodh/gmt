@@ -77,6 +77,17 @@
                           <?= $booking->date; ?>
                         </td>
                       </tr>
+                      <tr>
+                        <td>Status</td>
+                        <td>
+                          <?= $booking->status; ?>
+                        </td>
+                        <td>
+                        	<a href="<?= base_url(); ?>admin/changebooking/<?= $booking->id;  ?>" >
+                        		Change Status
+                        	</a>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

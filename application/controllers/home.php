@@ -42,6 +42,8 @@ class Home extends CI_Controller {
 		$data['all_categories'][1]->destination = $internaitonal_sub_destination;
 		$data['all_categories'][1]->interest = $internaitonal_sub_interest;
 		
+
+		$data['request'] = $this->uri->uri_string;
 		//printme($data);
 		//exit();
 
@@ -92,6 +94,21 @@ class Home extends CI_Controller {
 		// printme($data);
 		// exit();
 
+	}
+
+
+	public function booking()
+	{
+		$data = $this->init();
+
+		$name = $this->uri->uri_string;
+		$name = explode('booking/', $name);
+		$name = urldecode($name[1]);
+
+		//printme($name);
+		//exit();
+
+		$this->load->view('booking',$data);
 	}
 
 

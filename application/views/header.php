@@ -5147,7 +5147,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                                 <span>
                                                     Cars
                                                 </span></a></li>
-                                            <li class="top"><a id="Holidays" class="top_link" href="http://www.travelchoiceegypt.com/holiday_home.aspx">
+                                            <li class="top"><a id="Holidays" class="top_link" href="">
                                                 <span class="down">
                                                     Holidays
                                                 </span></a>
@@ -5163,18 +5163,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                                     </a></li> -->
                                                 </ul>
                                             </li>
-                                            <li class="top"><a id="Luxury" class="top_link" href="void:javascript(0);">
-                                                <span class="down">
-                                                    Visti Egypt
-                                                </span></a>
-                                                <ul class="sub">
-                                                    <?php foreach ($all_sub as $sub): ?>
-                                                        <li><a href="<?= base_url(); ?>subcategory/<?= $sub->name; ?>/1">
-                                                        <?= $sub->name; ?>
-                                                        </a></li>
-                                                    <?php endforeach ?>
-                                                </ul>
-                                            </li>
+                                           
                                             <!-- <li class="top"><a id="Incentive" class="top_link" href="<?= base_url(); ?>planyourvacation">
                                                 <span>
                                                     Plan Your Vacation
@@ -5301,13 +5290,59 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     </tr>
                     <tr>
                         <td>
-                            <table border="0" cellspacing="0" cellpadding="0" width="964">
+                            <?php if ($request): ?>
+                            	<table border="0" cellspacing="0" cellpadding="0" width="964">
                                 <tr>
                                     <td>
-                                        
+                                        <tr>
+                                                                                    <td valign="top" width="3" align="right">
+                                                    </td>
+                                                    <td class="Search" height="25" width="200">
+                                                        <select class="looking" onchange="MM_jumpMenu('parent',this,1)" name="menu1">
+                                                            <option selected value="#">I am looking for ...</option>
+                                                            <option value="<?= base_url(); ?>subcategory/Historical Holidays/1">
+                                                                Holidays in Egypt</option>
+                                                            <option value="<?= base_url(); ?>subcategory/Europe/2">
+                                                                International Holidays</option>
+                                                            <option value="">----------------------------------------------</option>
+                                                            <option value="http://www.epower.amadeus.com/thomascook/portals/thomascook/flightFareSearch.aspx">
+                                                                Flights</option>
+                                                            <option value="http://www.epower.amadeus.com/thomascook/Portals/thomascook/HotelSearch.aspx?AdvancedSearch=True&amp;h1h=">
+                                                                Hotels</option>
+                                                            <option value="http://www.epower.amadeus.com/thomascook/Portals/thomascook/carSearch.aspx">
+                                                                Car Rentals</option>
+                                                            <option value="">----------------------------------------------</option>
+                                                            <option value="http://www.travelchoiceegypt.com/medical">Medical Travel</option>
+                                                            <option value="http://www.travelchoiceegypt.com/travel_management.aspx">Corporate Travel</option>
+                                                            <option value="http://www.travelchoiceegypt.com/incentives_conferences.aspx">Conferences</option>
+                                                            <option value="http://www.travelchoiceegypt.com/financial_services.aspx">Financial Services</option>
+                                                            <option value="http://www.travelchoiceegypt.com/insurance/default.aspx">Travel Insurance</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="SearchHeader_new" bgColor="#f3f9f9" height="33" valign="top" colspan="3">
+                                                                                <table cellspacing="0" cellpadding="0" width="634" height="33">
+                                                                                    
+                                                                                        <td class="Search" height="25" width="150" align="center"><a href="http://www.facebook.com/pages/Travel-Choice-Egypt/163958496964633" target="_blank"><img alt="" border="0" alt="Find us on Facebook" align="middle" src="<?= base_url(); ?>application/static/images/fac3.jpg"
+                                                                                                    height="20" /></a>&nbsp;&nbsp;<a href="http://www.twitter.com/TravelChoiceEG" target="_blank"><img alt="" border="0" alt="Follow us on Twitter" align="middle" src="<?= base_url(); ?>application/static/images/twitter-1-.jpg"
+                                                                                                    height="20" /></a></td>
+                                                                                        <td class="Search" height="25" align="right">For booking call<br />
+                                                                                            For emergency call</td>
+                                                                                        <td class="Searchsmall" height="25" align="left">
+                                                                                            <!--%=InboundMorning%--> &nbsp;&nbsp;+202 16119 (or <a href="our_branches.aspx" target="_blank">
+                                                                                                <font class="postflk">Nearest Branch</font></a>) 
+                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0900-2200
+                                                                                            <br />
+                                                                                            <!--%=InboundEvening%--> &nbsp;&nbsp;+202 01001401367 - 
+                                                                                            01222192995&nbsp;&nbsp;&nbsp;&nbsp;1700-0800<br />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+
+																			</td>
                                     </td>
                                 </tr>
                             </table>
+                            <?php endif ?>
                         </td>
                     </tr>
                 </tbody>

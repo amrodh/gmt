@@ -39,13 +39,9 @@
                                 <?php foreach($banners as $banner): ?>
                                 <tr>
                                     <td>
-                                    <img style="width:100%;height:10%;margin-left:2%;" class="row" src="<?php echo base_url(); ?>application/static/upload/banner/<?= $banner->image; ?>"></td>
+                                    <img style="width:100%;height:60%;margin-left:2%;" class="row" src="<?php echo base_url(); ?>application/static/upload/banner/<?= $banner->image; ?>"></td>
                                     <td style="line-height: 5;"><?php echo $banner->page; ?></td>
-                                    <td style="line-height: 5;">
-                                        <a href="<?= base_url(); ?>admin/editbanner/<?= $banner->id; ?>">
-                                        <i class="fa fa-fw fa-edit"></i>
-                                        </a>
-                                    </td>
+                                    
                                     <td style="line-height: 5;"> 
                                          <a href="<?= base_url(); ?>admin/deletebanner/<?= $banner->id; ?>">
                                         <i class="fa fa-fw fa-trash-o"></i>

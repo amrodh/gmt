@@ -86,7 +86,7 @@
                                                                         <tr>
                                                                             <td class="SearchHeader_new" bgColor="#f3f9f9" height="33" valign="top" colspan="3">
                                                                                 <table cellspacing="0" cellpadding="0" width="634" height="33">
-                                                                                    <tr>
+                                                                                    
                                                                                         <td class="Search" height="25" width="150" align="center"><a href="http://www.facebook.com/pages/Travel-Choice-Egypt/163958496964633" target="_blank"><img alt="" border="0" alt="Find us on Facebook" align="middle" src="<?= base_url(); ?>application/static/images/fac3.jpg"
                                                                                                     height="20" /></a>&nbsp;&nbsp;<a href="http://www.twitter.com/TravelChoiceEG" target="_blank"><img alt="" border="0" alt="Follow us on Twitter" align="middle" src="<?= base_url(); ?>application/static/images/twitter-1-.jpg"
                                                                                                     height="20" /></a></td>

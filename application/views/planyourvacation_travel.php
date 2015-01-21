@@ -25,7 +25,7 @@
 											<tr>
 												<td class="titlelabel">All fields marked with <font class="errors">*</font> are 
 													required.</td>
-												<td colspan="2" align="right"></td>
+												<td colspan="2" align="right"><img alt="" src="./img/home1/Online-payment-icon.jpg" /></td>
 											</tr>
 											<tr>
 												<td height="10" colspan="3"></td>
@@ -361,26 +361,373 @@
 											<tr>
 												<td height="5" colspan="3"></td>
 											</tr>
-											
 											<tr>
-												<td height="5" colspan="3"></td>
-											</tr>
-											
-											<tr>
-												<td height="5" colspan="3"></td>
-											</tr>
+												<td class="titlelabel" width="300" align="left">Hotel Category</td>
+												<td colspan="2" align="left"><select name="HotelCategory" id="HotelCategory" class="ComboBox" style="width:112px;">
+	<option value="Three Stars">Three Stars</option>
+	<option value="Four Stars">Four Stars</option>
+	<option value="Five Stars">Five Stars</option>
 
+</select></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" width="300" align="left">Hotel Location</td>
+												<td colspan="2" align="left"><select name="HotelLocation" id="HotelLocation" class="ComboBox" style="width:112px;">
+	<option value="City Center">City Center</option>
+	<option value="Beach">Beach</option>
+	<option value="Airport">Airport</option>
+
+</select></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" width="300" align="left">Intended Travel Date <FONT class="comment">*</FONT></td>
+												<td colspan="2" align="left">
+													<table style="WIDTH: 384px; HEIGHT: 26px" id="CalendreTable" cellspacing="0" cellpadding="0"
+														width="384">
+														<tr>
+															<td align="left"><select name="cinday" id="cinday" class="ComboBox">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option selected="selected" value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select>&nbsp;</td>
+															<td><select name="cinmonth" id="cinmonth" class="ComboBox">
+	<option selected="selected" value="1">January</option>
+	<option value="2">February</option>
+	<option value="3">March</option>
+	<option value="4">April</option>
+	<option value="5">May</option>
+	<option value="6">June</option>
+	<option value="7">July</option>
+	<option value="8">August</option>
+	<option value="9">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+
+</select>&nbsp;</td>
+															<td><input name="year" type="text" value="2015" maxlength="4" id="year" class="TextEdit" style="width:40px;" />&nbsp;</td>
+															<td align="left"><a href="javascript:calendarShow(5,document.cinmonth);"><img alt="" border="0" src="img/calendar.gif" width="21" height="20" /></a></td>
+														</tr>
+														<tr>
+															<td class="titlelabel" colSpan="5">Intended Travel Date should start 3 days after 
+																today.</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
 											<tr>
 												<td height="5" colSpan="3"></td>
 											</tr>
 											<tr>
-												<td class="titlelabel" width="300" align="left">Intended Travel Date <FONT class="errors">*</FONT></td>
-												<td colspan="2" align="left"><input name="date" type="date" /></td>
+												<!--td colSpan="3">
+													<div id="MealDiv">
+														<table id="MealTable" cellSpacing="0" cellPadding="0" width="700">
+															<tr-->
+																<td class="titlelabel" width="250" align="left">Meal <FONT class="errors">*</FONT></td>
+																<td colspan="2" align="left"><select name="OracleMealDDL" id="OracleMealDDL" class="ComboBox" style="width:150px;">
+	<option value=""></option>
+	<option value="BB">Bed - Breakfast</option>
+	<option value="HB">Half Board</option>
+	<option value="FB">Full Board</option>
+	<option value="MD">Meal Distribution</option>
+	<option value="BR">Breakfast</option>
+	<option value="FLT">Room Without Meals</option>
+	<option value="SML">Set Menu Lunch</option>
+	<option value="SMD">Set Menu Dinner</option>
+	<option value="BL">Buffet Lunch</option>
+	<option value="BD">Buffet Dinner</option>
+	<option value="CGD">Christmas Gala Dinner</option>
+	<option value="NGD">New Year Gala Dinner</option>
+	<option value="TB">Total Bill</option>
+	<option value="CB">Continental Breakfast</option>
+	<option value="BUB">Buffet Breakfast</option>
+	<option value="CBB">Cold Buffet Breakfast</option>
+	<option value="CCB">Cold Cont.Buf.Breakfast</option>
+	<option value="BBC">Contin. Buffet Breakfast</option>
+	<option value="ABB">American Buffet Breakfas</option>
+	<option value="ALL">All Inclusive</option>
+	<option value="EB">English Breakfast</option>
+	<option value="BED">Bed Only</option>
+	<option value="COB">Cont. Buffet Breakfast</option>
+	<option value="BES">BED ON SOHOUR</option>
+	<option value="BSO">BED-SOHOUR</option>
+	<option value="SOF">Soft All Inclusive</option>
+	<option value="HRD">Hard All Inclusive</option>
+	<option value="CFB">Coffee Break</option>
+
+</select><span id="Requiredfieldvalidator10" class="errors" style="visibility:hidden;">*</span></td>
+															<!--/tr>
+														</table>
+													</div>
+												</td-->
 											</tr>
 											<tr>
 												<td height="20" colspan="3"></td>
 											</tr>
-											
+											<tr>
+												<td style="HEIGHT: 13px" class="tableheader" valign="middle" colspan="3">Required 
+													Data</td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">No. Of Persons Needing&nbsp;Visa <FONT class="errors">*</FONT></td>
+												<td colspan="2" align="left"><input name="VisaNeededTxt" type="text" value="0" id="VisaNeededTxt" class="TextEdit" style="width:50px;" />
+													<span id="RequiredFieldValidator1" class="errors" style="visibility:hidden;">*</span>
+													<span id="RegularExpressionValidator4" class="errors" style="Z-INDEX:0;visibility:hidden;">* Numbers Only *</span></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<!-- Date1 -->
+											<tr>
+												<td class="titlelabel" align="left">Child 1 birthdate</td>
+												<td colspan="2" align="left">
+													<div id="Child1IndateDiv">
+														<table id="Child1CalenderTable" cellspacing="0" cellpadding="0" width="448">
+															<tr>
+																<td width="20" align="left"><select name="Child1DayDDL" id="Child1DayDDL" class="ComboBox">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select></td>
+																<td width="7"><select name="Child1MonthDDL" id="Child1MonthDDL" class="ComboBox">
+	<option value="1">January</option>
+	<option value="2">February</option>
+	<option value="3">March</option>
+	<option value="4">April</option>
+	<option value="5">May</option>
+	<option value="6">June</option>
+	<option value="7">July</option>
+	<option value="8">August</option>
+	<option value="9">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+
+</select></td>
+																<td width="4"><input name="Child1YearTxt" type="text" maxlength="4" id="Child1YearTxt" class="smTextEdit" style="width:50px;" /></td>
+																<td width="20" align="left"><a href="javascript:calendarShow_WithPrevious(1,document.Child1MonthDDL);"><img border="0" src="img/calendar.gif" width="21" height="20" /></a>
+																</td>
+																<td width="140"><span id="RegularExpressionValidator6" class="errors" style="Z-INDEX:0;visibility:hidden;">* Numbers Only *</span><br />
+																</td>
+															</tr>
+														</table>
+													</div>
+												</td>
+											</tr>
+											<!-- End of Date1 -->
+											<!-- Date2 -->
+											<tr>
+												<td class="titlelabel" align="left">Child 2 birthdate</td>
+												<td colspan="2" align="left">
+													<div id="Child2IndateDiv">
+														<table id="Child2CalenderTable" cellspacing="0" cellpadding="0" width="448">
+															<tr>
+																<td width="20" align="left"><select name="Child2DayDDL" id="Child2DayDDL" class="ComboBox">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select></td>
+																<td width="7"><select name="Child2MonthDDL" id="Child2MonthDDL" class="ComboBox">
+	<option value="1">January</option>
+	<option value="2">February</option>
+	<option value="3">March</option>
+	<option value="4">April</option>
+	<option value="5">May</option>
+	<option value="6">June</option>
+	<option value="7">July</option>
+	<option value="8">August</option>
+	<option value="9">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+
+</select></td>
+																<td width="4"><input name="Child2YearTxt" type="text" maxlength="4" id="Child2YearTxt" class="smTextEdit" style="width:50px;" /></td>
+																<td width="20" align="left"><a href="javascript:calendarShow_WithPrevious(2,document.Child2MonthDDL);"><img border="0" src="img/calendar.gif" width="21" height="20" /></a>
+																</td>
+																<td width="140"><br />
+																	<span id="RegularExpressionValidator7" class="errors" style="Z-INDEX:0;visibility:hidden;">* Numbers Only *</span></td>
+															</tr>
+														</table>
+													</div>
+												</td>
+											</tr>
+											<!-- End of Date2 -->
+											<!-- Date3 -->
+											<tr>
+												<td class="titlelabel" align="left">Child 3 birthdate</td>
+												<td colspan="2" align="left">
+													<div id="Child3IndateDiv">
+														<table id="Child3CalenderTable" cellspacing="0" cellpadding="0" width="448">
+															<tr>
+																<td width="20" align="left"><select name="Child3DayDDL" id="Child3DayDDL" class="ComboBox">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select></td>
+																<td width="7"><select name="Child3MonthDDL" id="Child3MonthDDL" class="ComboBox">
+	<option value="1">January</option>
+	<option value="2">February</option>
+	<option value="3">March</option>
+	<option value="4">April</option>
+	<option value="5">May</option>
+	<option value="6">June</option>
+	<option value="7">July</option>
+	<option value="8">August</option>
+	<option value="9">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+
+</select></td>
+																<TD width="4"><input name="Child3YearTxt" type="text" maxlength="4" id="Child3YearTxt" class="smTextEdit" style="width:50px;" /></td>
+																<td width="20" align="left"><A href="javascript:calendarShow_WithPrevious(3,document.Child3MonthDDL);"><IMG border="0" src="img/calendar.gif" width="21" height="20"></A>
+																</td>
+																<td width="140"><span id="RegularExpressionValidator8" class="errors" style="Z-INDEX:0;visibility:hidden;">* Numbers Only *</span><br />
+																</td>
+															</tr>
+														</table>
+													</div>
+												</td>
+											</tr>
+											<!-- End of Date3 -->
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">Client Budget:</td>
+												<td colspan="2" align="left"><input name="ClientBudgetTxt" type="text" value="0" id="ClientBudgetTxt" class="TextEdit" style="width:50px;" /><select name="ClientBudgetDDL" id="ClientBudgetDDL" class="ComboBox" style="Z-INDEX: 0">
+	<option selected="selected" value="Per Person">Per Person</option>
+	<option value="Per Couple">Per Couple</option>
+	<option value="Per Vacation">Per Vacation</option>
+
+</select><span id="Regularexpressionvalidator5" class="errors" style="visibility:hidden;">* Numbers Only *</span></td>
+											</tr>
 											<tr>
 												<td height="20" colspan="3"></td>
 											</tr>
@@ -1119,7 +1466,31 @@
 											<tr>
 												<td height="5" colspan="3"></td>
 											</tr>
-											
+											<tr>
+												<td class="titlelabel" align="left">Please choose an option...</td>
+												<td colSpan="2" align="left"><select name="HSBCoptionList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;HSBCoptionList\&#39;,\&#39;\&#39;)&#39;, 0)" id="HSBCoptionList" class="ComboBox">
+	<option selected="selected" value="-1#">None of the options applicable</option>
+	<option value="-1#">None of the options applicable</option>
+
+</select></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">Where did you know about us?</td>
+												<td colspan="2" align="left"><select name="KnowAboutDDL" id="KnowAboutDDL" class="ComboBox">
+	<option value=""></option>
+	<option value="Facebook">Facebook</option>
+	<option value="Twitter">Twitter</option>
+	<option value="Internet search">Internet search</option>
+	<option value="Printed ad">Printed ad</option>
+	<option value="Our magazine">Our magazine</option>
+	<option value="Email / Newsletter">Email / Newsletter</option>
+	<option value="Newspaper">Newspaper</option>
+
+</select></td>
+											</tr>
 											<tr>
 												<td height="5" colSpan="3"></td>
 											</tr>
@@ -1130,20 +1501,442 @@
 											<tr>
 												<td height="20" colspan="3"></td>
 											</tr>
+											<tr>
+												<td class="tableheader" valign="middle" colspan="3">Contact Information</td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">Street Address</td>
+												<td colspan="2" align="left"><input name="StreetAddress" type="text" maxlength="50" id="StreetAddress" class="bigTextEdit" style="width:225px;" /></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">Country <FONT class="errors">*</FONT></td>
+												<td colspan="2" align="left"><select name="country" id="country" class="ComboBox" onchange="SelectIndexChangedCountry(&#39;country&#39;);" style="width:150px;">
+	<option selected="selected" value=""></option>
+	<option value="Afghanistan">Afghanistan</option>
+	<option value="Albania">Albania</option>
+	<option value="Algeria">Algeria</option>
+	<option value="American Samoa">American Samoa</option>
+	<option value="Andorra">Andorra</option>
+	<option value="Angola">Angola</option>
+	<option value="Anguilla">Anguilla</option>
+	<option value="Antarctica">Antarctica</option>
+	<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+	<option value="Argentina">Argentina</option>
+	<option value="Armenia">Armenia</option>
+	<option value="Aruba">Aruba</option>
+	<option value="Australia">Australia</option>
+	<option value="Austria">Austria</option>
+	<option value="Azerbaijan">Azerbaijan</option>
+	<option value="Bahamas">Bahamas</option>
+	<option value="Bahrain">Bahrain</option>
+	<option value="Bangladesh">Bangladesh</option>
+	<option value="Barbados">Barbados</option>
+	<option value="Belarus">Belarus</option>
+	<option value="Belgium">Belgium</option>
+	<option value="Belize">Belize</option>
+	<option value="Benin">Benin</option>
+	<option value="Bermuda">Bermuda</option>
+	<option value="Bhutan">Bhutan</option>
+	<option value="Bolivia">Bolivia</option>
+	<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+	<option value="Botswana">Botswana</option>
+	<option value="Bouvet Island">Bouvet Island</option>
+	<option value="Brazil">Brazil</option>
+	<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+	<option value="Brunei">Brunei</option>
+	<option value="Bulgaria">Bulgaria</option>
+	<option value="Burkina Faso">Burkina Faso</option>
+	<option value="Burundi">Burundi</option>
+	<option value="Cambodia">Cambodia</option>
+	<option value="Cameroon">Cameroon</option>
+	<option value="Canada">Canada</option>
+	<option value="Cape Verde">Cape Verde</option>
+	<option value="Cayman Islands">Cayman Islands</option>
+	<option value="Central African Republic">Central African Republic</option>
+	<option value="Chad">Chad</option>
+	<option value="Chile">Chile</option>
+	<option value="China">China</option>
+	<option value="Christmas Island">Christmas Island</option>
+	<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+	<option value="Colombia">Colombia</option>
+	<option value="Comoros">Comoros</option>
+	<option value="Congo">Congo</option>
+	<option value="Congo (DRC)">Congo (DRC)</option>
+	<option value="Cook Islands">Cook Islands</option>
+	<option value="Costa Rica">Costa Rica</option>
+	<option value="Croatia">Croatia</option>
+	<option value="Cte d&#39;&#39;&#39;&#39;Ivoire">Cte d&#39;&#39;&#39;&#39;Ivoire</option>
+	<option value="Cuba">Cuba</option>
+	<option value="Cyprus">Cyprus</option>
+	<option value="Czech Republic">Czech Republic</option>
+	<option value="Denmark">Denmark</option>
+	<option value="Djibouti">Djibouti</option>
+	<option value="Dominica">Dominica</option>
+	<option value="Dominican Republic">Dominican Republic</option>
+	<option value="East Timor">East Timor</option>
+	<option value="Ecuador">Ecuador</option>
+	<option value="Egypt">Egypt</option>
+	<option value="El Salvador">El Salvador</option>
+	<option value="Equatorial Guinea">Equatorial Guinea</option>
+	<option value="Eritrea">Eritrea</option>
+	<option value="Estonia">Estonia</option>
+	<option value="Ethiopia">Ethiopia</option>
+	<option value="Falkland Islands (Islas Malvinas)">Falkland Islands (Islas Malvinas)</option>
+	<option value="Faroe Islands">Faroe Islands</option>
+	<option value="Fiji Islands">Fiji Islands</option>
+	<option value="Finland">Finland</option>
+	<option value="France">France</option>
+	<option value="French Guiana">French Guiana</option>
+	<option value="French Polynesia">French Polynesia</option>
+	<option value="French Southern and Antarctic Lands">French Southern and Antarctic Lands</option>
+	<option value="Gabon">Gabon</option>
+	<option value="Gambia">Gambia</option>
+	<option value="Georgia">Georgia</option>
+	<option value="Germany">Germany</option>
+	<option value="Ghana">Ghana</option>
+	<option value="Gibraltar">Gibraltar</option>
+	<option value="Grand Cayman">Grand Cayman</option>
+	<option value="Greece">Greece</option>
+	<option value="Greenland">Greenland</option>
+	<option value="Grenada">Grenada</option>
+	<option value="Guadeloupe">Guadeloupe</option>
+	<option value="Guam">Guam</option>
+	<option value="Guatemala">Guatemala</option>
+	<option value="Guinea">Guinea</option>
+	<option value="GuineaBissau">GuineaBissau</option>
+	<option value="Guyana">Guyana</option>
+	<option value="Haiti">Haiti</option>
+	<option value="Hawaii">Hawaii</option>
+	<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+	<option value="Holland">Holland</option>
+	<option value="Honduras">Honduras</option>
+	<option value="Hong Kong SAR">Hong Kong SAR</option>
+	<option value="Hungary">Hungary</option>
+	<option value="Iceland">Iceland</option>
+	<option value="India">India</option>
+	<option value="Indonesia">Indonesia</option>
+	<option value="Iran">Iran</option>
+	<option value="Iraq">Iraq</option>
+	<option value="Ireland">Ireland</option>
+	<option value="Israel">Israel</option>
+	<option value="Italy">Italy</option>
+	<option value="Jamaica">Jamaica</option>
+	<option value="Japan">Japan</option>
+	<option value="Jordan">Jordan</option>
+	<option value="Kazakhstan">Kazakhstan</option>
+	<option value="Kenya">Kenya</option>
+	<option value="Kiribati">Kiribati</option>
+	<option value="Korea">Korea</option>
+	<option value="Kuwait">Kuwait</option>
+	<option value="Kyrgyzstan">Kyrgyzstan</option>
+	<option value="Laos">Laos</option>
+	<option value="Latvia">Latvia</option>
+	<option value="Lebanon">Lebanon</option>
+	<option value="Lesotho">Lesotho</option>
+	<option value="Liberia">Liberia</option>
+	<option value="Libya">Libya</option>
+	<option value="Liechtenstein">Liechtenstein</option>
+	<option value="Lithuania">Lithuania</option>
+	<option value="Luxembourg">Luxembourg</option>
+	<option value="Macau SAR">Macau SAR</option>
+	<option value="Madagascar">Madagascar</option>
+	<option value="Malawi">Malawi</option>
+	<option value="Malaysia">Malaysia</option>
+	<option value="Maldives">Maldives</option>
+	<option value="Mali">Mali</option>
+	<option value="Malta">Malta</option>
+	<option value="Marshall Islands">Marshall Islands</option>
+	<option value="Martinique">Martinique</option>
+	<option value="Mauritania">Mauritania</option>
+	<option value="Mauritius">Mauritius</option>
+	<option value="Mayotte">Mayotte</option>
+	<option value="Mexico">Mexico</option>
+	<option value="Micronesia">Micronesia</option>
+	<option value="Moldova">Moldova</option>
+	<option value="Monaco">Monaco</option>
+	<option value="Mongolia">Mongolia</option>
+	<option value="Montserrat">Montserrat</option>
+	<option value="Morocco">Morocco</option>
+	<option value="Mozambique">Mozambique</option>
+	<option value="Myanmar">Myanmar</option>
+	<option value="Namibia">Namibia</option>
+	<option value="Nauru">Nauru</option>
+	<option value="Nepal">Nepal</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="Netherlands Antilles">Netherlands Antilles</option>
+	<option value="New Caledonia">New Caledonia</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Nicaragua">Nicaragua</option>
+	<option value="Niger">Niger</option>
+	<option value="Nigeria">Nigeria</option>
+	<option value="Niue">Niue</option>
+	<option value="None">None</option>
+	<option value="Norfolk Island">Norfolk Island</option>
+	<option value="North Korea">North Korea</option>
+	<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+	<option value="Norway">Norway</option>
+	<option value="Oman">Oman</option>
+	<option value="Pakistan">Pakistan</option>
+	<option value="Palau">Palau</option>
+	<option value="Panama">Panama</option>
+	<option value="Papua New Guinea">Papua New Guinea</option>
+	<option value="Paraguay">Paraguay</option>
+	<option value="Peru">Peru</option>
+	<option value="Philippines">Philippines</option>
+	<option value="Pitcairn Islands">Pitcairn Islands</option>
+	<option value="Poland">Poland</option>
+	<option value="Portugal">Portugal</option>
+	<option value="Puerto Rico">Puerto Rico</option>
+	<option value="Qatar">Qatar</option>
+	<option value="Reunion">Reunion</option>
+	<option value="Romania">Romania</option>
+	<option value="Russia">Russia</option>
+	<option value="Rwanda">Rwanda</option>
+	<option value="Samoa">Samoa</option>
+	<option value="San Marino">San Marino</option>
+	<option value="Saudi Arabia">Saudi Arabia</option>
+	<option value="Senegal">Senegal</option>
+	<option value="Seychelles">Seychelles</option>
+	<option value="Seychelles Island">Seychelles Island</option>
+	<option value="Sierra Leone">Sierra Leone</option>
+	<option value="Singapore">Singapore</option>
+	<option value="Slovakia">Slovakia</option>
+	<option value="Slovenia">Slovenia</option>
+	<option value="Solomon Islands">Solomon Islands</option>
+	<option value="Somalia">Somalia</option>
+	<option value="South Africa">South Africa</option>
+	<option value="South America">South America</option>
+	<option value="Spain">Spain</option>
+	<option value="Sri Lanka">Sri Lanka</option>
+	<option value="St. Helena">St. Helena</option>
+	<option value="St. Kitts and Nevis">St. Kitts and Nevis</option>
+	<option value="St. Lucia">St. Lucia</option>
+	<option value="St. Maarten">St. Maarten</option>
+	<option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option>
+	<option value="St. Vincent and the Grenadines">St. Vincent and the Grenadines</option>
+	<option value="Sudan">Sudan</option>
+	<option value="Suriname">Suriname</option>
+	<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+	<option value="Swaziland">Swaziland</option>
+	<option value="Sweden">Sweden</option>
+	<option value="Switzerland">Switzerland</option>
+	<option value="Syria">Syria</option>
+	<option value="Taiwan">Taiwan</option>
+	<option value="Tajikistan">Tajikistan</option>
+	<option value="Tanzania">Tanzania</option>
+	<option value="Thailand">Thailand</option>
+	<option value="Togo">Togo</option>
+	<option value="Tokelau">Tokelau</option>
+	<option value="Tonga">Tonga</option>
+	<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+	<option value="Tunisia">Tunisia</option>
+	<option value="Turkey">Turkey</option>
+	<option value="Turkmenistan">Turkmenistan</option>
+	<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+	<option value="Tuvalu">Tuvalu</option>
+	<option value="Uganda">Uganda</option>
+	<option value="Ukraine">Ukraine</option>
+	<option value="United Arab Emirates">United Arab Emirates</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+	<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+	<option value="Uruguay">Uruguay</option>
+	<option value="Uzbekistan">Uzbekistan</option>
+	<option value="Vanuatu">Vanuatu</option>
+	<option value="Vatican City">Vatican City</option>
+	<option value="Venezuela">Venezuela</option>
+	<option value="Viet Nam">Viet Nam</option>
+	<option value="Virgin Islands">Virgin Islands</option>
+	<option value="Virgin Islands (British)">Virgin Islands (British)</option>
+	<option value="Wallis and Futuna">Wallis and Futuna</option>
+	<option value="Yemen">Yemen</option>
+	<option value="Yugoslavia">Yugoslavia</option>
+	<option value="Zambia">Zambia</option>
+	<option value="Zimbabwe">Zimbabwe</option>
 
+</select><span id="Requiredfieldvalidator6" tabindex="7" class="errors" style="visibility:hidden;">*</span></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" align="left">City</td>
+												<td colspan="2" align="left"><input name="City" type="text" maxlength="20" id="City" class="TextEdit" style="width:150px;" /><select name="CityDDL" id="CityDDL" class="ComboBox" onchange="SelectIndexChangedCity();">
+	<option selected="selected" value="Please Select a City">Please Select a City</option>
+	<option value="6th October (02)">6th October (02)</option>
+	<option value="Abu Simbel (097)">Abu Simbel (097)</option>
+	<option value="Abu Soma ()">Abu Soma ()</option>
+	<option value="Ain Sokhna (062)">Ain Sokhna (062)</option>
+	<option value="Al Arish (068)">Al Arish (068)</option>
+	<option value="Alexandria (03)">Alexandria (03)</option>
+	<option value="Aswan (097)">Aswan (097)</option>
+	<option value="Bahareya (045)">Bahareya (045)</option>
+	<option value="Borg El Arab (03)">Borg El Arab (03)</option>
+	<option value="Cairo (02)">Cairo (02)</option>
+	<option value="Dahab (069)">Dahab (069)</option>
+	<option value="Edfu (095)">Edfu (095)</option>
+	<option value="Egypt ()">Egypt ()</option>
+	<option value="El Arish ()">El Arish ()</option>
+	<option value="El Dakhla Oasis (092)">El Dakhla Oasis (092)</option>
+	<option value="El Gouna (065)">El Gouna (065)</option>
+	<option value="El Kab ()">El Kab ()</option>
+	<option value="El Kharga Oasis (092)">El Kharga Oasis (092)</option>
+	<option value="El Minya (086)">El Minya (086)</option>
+	<option value="El Quseir (065)">El Quseir (065)</option>
+	<option value="Fayoum ()">Fayoum ()</option>
+	<option value="Giza (02)">Giza (02)</option>
+	<option value="Helwan (02)">Helwan (02)</option>
+	<option value="Hurghada (065)">Hurghada (065)</option>
+	<option value="Ismailia (064)">Ismailia (064)</option>
+	<option value="Kom Ombo (095)">Kom Ombo (095)</option>
+	<option value="Lake Nasser (096)">Lake Nasser (096)</option>
+	<option value="Luxor (095)">Luxor (095)</option>
+	<option value="Luxor (095)">Luxor (095)</option>
+	<option value="Makadi Bay (065)">Makadi Bay (065)</option>
+	<option value="Marsa Alam (065)">Marsa Alam (065)</option>
+	<option value="Marsa Matruh (046)">Marsa Matruh (046)</option>
+	<option value="Mersa Matruh (046)">Mersa Matruh (046)</option>
+	<option value="Minya (086)">Minya (086)</option>
+	<option value="Nile Cruises ()">Nile Cruises ()</option>
+	<option value="Port Said (066)">Port Said (066)</option>
+	<option value="Safaga (0653)">Safaga (0653)</option>
+	<option value="Sahl Hasheesh (067)">Sahl Hasheesh (067)</option>
+	<option value="Sharm El Sheikh (069)">Sharm El Sheikh (069)</option>
+	<option value="Sohag (093)">Sohag (093)</option>
+	<option value="Soma Bay (065)">Soma Bay (065)</option>
+	<option value="St Catherine (069)">St Catherine (069)</option>
+	<option value="Suez (062)">Suez (062)</option>
+	<option value="Taba (069)">Taba (069)</option>
+
+</select><span id="RequiredFieldValidator9" class="errors" style="visibility:hidden;">*</span></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" width="250" align="left">Phone Number</td>
+												<td align="left" colspan="2"><span id="PhoneCodeTxt" class="TextEdit" style="display:inline-block;width:50px;"></span><input name="PhoneNumberTxt" type="text" id="PhoneNumberTxt" class="TextEdit" style="width:170px;" /></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" width="250" align="left">Mobile</td>
+												<td align="left" colspan="2"><input name="MobileTxt" type="text" id="MobileTxt" class="TextEdit" style="width:170px;" /></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<TD class="titlelabel" width="250" align="left">Fax Number</td>
+												<TD colspan="2" align="left"><input name="FaxTxt" type="text" id="FaxTxt" class="TextEdit" style="width:170px;" /></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<TD class="titlelabel" align="left">Email Address <FONT class="errors">*</FONT></td>
+												<TD width="450" align="left" colspan="2"><input name="EmailAddress" type="text" maxlength="50" id="EmailAddress" class="bigTextEdit" style="width:225px;" /><span id="RegularExpressionValidator1" tabindex="12" class="errors" style="display:none;">*</span><span id="Requiredfieldvalidator8" tabindex="11" class="errors" style="display:none;">*</span></td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<TD class="tableheader" valign="middle" colspan="3">Special Requests</td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="Label" colspan="3" align="left">Please enter any special requests or needs you may 
+													have in the box below so that we may better service your booking.
+												</td>
+											</tr>
+											<tr>
+												<td height="5" colspan="3"></td>
+											</tr>
+											<tr>
+												<td width="650" colspan="3" align="left"><textarea name="comment" rows="2" cols="20" id="comment" class="TextArea" style="height:105px;width:650px;">
+</textarea></td>
+											</tr>
 											<tr>
 												<td height="20" colspan="3"></td>
 											</tr>
-
-
 											<tr>
-												<td>
-													<input type="submit" name="submit" value="Submit">
+												<td class="tableheader" valign="middle" colspan="3">Privacy Statement</td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="Label" colspan="3">We understand that making purchases online involves a 
+													great deal of trust on your part; we take this trust very seriously, and make 
+													it our highest priority to ensure the security and confidentiality of the 
+													personally identifiable information ("PII") you provide us. (PII includes 
+													information that can be linked to a specific individual, such as name, address, 
+													phone number, or email address.)
 												</td>
 											</tr>
-											
-											
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td class="titlelabel" colspan="3" align="left"><span style="color:#3366FF;"><input id="AgreementCheck" type="checkbox" name="AgreementCheck" /><label for="AgreementCheck">I accept the terms and conditions</label></span><br />
+												</td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3" align="center"></td>
+											</tr>
+											<tr>
+												<td colSpan="3" align="center"><div id="ValidationSummary1" class="errors" style="display:none;">
 
+</div></td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3" align="center"></td>
+											</tr>
+											<tr>
+												<td height="10" colspan="3"></td>
+											</tr>
+											<tr>
+												<td colspan="3" align="center">
+												<div>
+												<div id="UpdateProgress" style="display:none;">
+	
+<img id="Image1" src="waiting.gif" alt="Processing" />
 
+</div>
+
+<div id="pnlData">
+	
+<span id="ErrorLabel" class="errors" style="Z-INDEX: 0"></span><br />
+<span id="result" class="errors"></span><br />
+<input type="submit" name="Button1" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Button1&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button1" class="button" style="width:120px;" />
+
+</div>
+</div>
+
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="10"></td>
+								</tr>
+								<tr>
+									<td height="40" colspan="4"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>
 
 <?php include('footer.php'); ?>

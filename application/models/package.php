@@ -36,6 +36,7 @@ class Package extends CI_Model {
       $q = $this
               ->db
               ->order_by('creation_date','desc')
+              ->limit(6)
               ->get('feature');
 
            if($q->num_rows >0){
@@ -45,6 +46,36 @@ class Package extends CI_Model {
            return false; 
 
     }
+
+    function delete_feature($id)
+    {
+      $q = $this
+              ->db
+              ->where('package_id',$id)
+              ->delete('feature');
+
+          if($this->db->affected_rows() != 1){
+            return false;
+          }
+
+          return true;
+    }
+
+     function insert_feature($params)
+   {  
+
+      $query = $this->db->insert_string('feature', $params);
+      $query = $this->db->query($query);
+
+      if($this->db->affected_rows() != 1){
+          return false;
+        }
+
+        return true;
+
+   }
+
+
 
     
 
