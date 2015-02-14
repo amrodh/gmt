@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 21, 2015 at 03:43 AM
+-- Generation Time: Feb 14, 2015 at 06:49 PM
 -- Server version: 5.5.35
 -- PHP Version: 5.4.23
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `page` (`page`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `banner`
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `banner` (
 
 INSERT INTO `banner` (`id`, `page`, `image`, `creation_date`) VALUES
 (5, 'home', 'phpshWzN8_1421119366', '2015-01-13 03:22:46'),
-(7, 'booking', 'phpYDfs70_1421810091', '2015-01-21 03:14:51');
+(7, 'booking', 'phpYDfs70_1421810091', '2015-01-21 03:14:51'),
+(8, 'holidays', 'phplBKTWG_1421811981', '2015-01-21 03:46:21');
 
 -- --------------------------------------------------------
 
@@ -454,8 +455,8 @@ ALTER TABLE `contact`
 -- Constraints for table `feature`
 --
 ALTER TABLE `feature`
-  ADD CONSTRAINT `feature_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `feature_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `feature_ibfk_1` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `feature_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `package_image`
