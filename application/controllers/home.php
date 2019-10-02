@@ -13,9 +13,9 @@ class Home extends CI_Controller {
 		$egypt_sub = array();
 		$egypt_sub_destination = array();
 		$egypt_sub_interest = array();
-		$internaitonal_sub = array();
-		$internaitonal_sub_destination = array();
-		$internaitonal_sub_interest = array();
+		$international_sub = array();
+		$international_sub_destination = array();
+		$international_sub_interest = array();
 
 		foreach ($data['total_sub'] as $sub ) {
 			$category_id = $sub->category_id;
@@ -27,20 +27,20 @@ class Home extends CI_Controller {
 					$egypt_sub_interest[] = $sub->name;
 			}
 			else{
-				$internaitonal_sub[]= $sub->name;
+				$international_sub[]= $sub->name;
 				if($sub->type == 1)
-					$internaitonal_sub_destination[] = $sub->name;
+					$international_sub_destination[] = $sub->name;
 				else
-					$internaitonal_sub_interest[] = $sub->name;
+					$international_sub_interest[] = $sub->name;
 			}
 		}
 
 		$data['all_categories'][0]->subs = $egypt_sub;
 		$data['all_categories'][0]->destination = $egypt_sub_destination;
 		$data['all_categories'][0]->interest = $egypt_sub_interest;
-		$data['all_categories'][1]->subs = $internaitonal_sub;
-		$data['all_categories'][1]->destination = $internaitonal_sub_destination;
-		$data['all_categories'][1]->interest = $internaitonal_sub_interest;
+		$data['all_categories'][1]->subs = $international_sub;
+		$data['all_categories'][1]->destination = $international_sub_destination;
+		$data['all_categories'][1]->interest = $international_sub_interest;
 		
 
 		$data['request'] = $this->uri->uri_string;
